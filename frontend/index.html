@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content">
+  <title>Room Connect</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Screen 1: Join Room Screen -->
+  <div id="join-screen" class="card">
+    <h2>Room Connect</h2>
+    <input type="text" id="username-input" placeholder="Your Name" />
+    
+    <!-- Room Input with Auto-Generate Button -->
+    <div class="room-input-group">
+      <input type="text" id="room-input" placeholder="Room ID (e.g. x9k-2mp4-q7v)" />
+      <button type="button" class="gen-btn" onclick="generateSecureRoomId()">Auto Create</button>
+    </div>
+
+    <button onclick="joinRoom()">Join Room</button>
+  </div>
+
+  <!-- Screen 2: Active Chat Room -->
+  <div id="chat-screen" class="card chat-card" style="display: none;">
+    <div class="chat-header">
+      <div>
+        <h3 id="current-room">Room: -</h3>
+        <span id="current-user">User: -</span>
+      </div>
+      <button class="leave-btn" onclick="leaveRoom()">Leave</button>
+    </div>
+
+    <div class="messages-container" id="messages-container"></div>
+    <div id="typing-indicator" class="typing-indicator"></div>
+
+    <div class="input-bar">
+      <input type="text" id="message-input" placeholder="Type a message..." />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
